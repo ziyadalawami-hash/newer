@@ -166,7 +166,7 @@ const MainContent = () => {
                         </div>
                       </div>
 
-                      <div className="bg-white/80 px-6 py-4 border-t border-gray-100 flex gap-3 flex-shrink-0 relative backdrop-blur-sm">
+                      <div className="px-6 py-4 border-t border-gray-100/0 flex gap-3 flex-shrink-0 relative">
                         {project.github && (
                           <a
                             href={project.github}
