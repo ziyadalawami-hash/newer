@@ -11,13 +11,11 @@ function App() {
   }, [isRTL]);
 
   return (
-    <div id="top" className="bg-[#000a01] min-h-screen pb-14 md:pb-0">
+    <div id="top" className="bg-[#000a01] min-h-screen md:pt-10 pb-14 md:pb-0">
       <MarqueeBar />
-      <div className="bg-[#001a03] md:pt-10">
-        <main className="max-w-[1000px] mx-auto bg-[#001a03]">
-          <Content />
-        </main>
-      </div>
+      <main className="max-w-[1000px] mx-auto bg-[#001a03]">
+        <Content />
+      </main>
     </div>
   );
 }
