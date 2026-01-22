@@ -3,7 +3,6 @@ import { GitBranch, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { usePortfolioData } from '../hooks/usePortfolioData';
 import Hero from './Hero';
-import Skills from './Skills';
 import Footer from './Footer';
 import Contact from './Contact';
 
@@ -20,7 +19,7 @@ const MainContent = () => {
     );
   }
 
-  const { hero: heroData, translations, projects: projectsList, skills } = data;
+  const { hero: heroData, translations, projects: projectsList } = data;
   const t = translations;
 
   const handleCardClick = (index: number) => {
@@ -197,10 +196,6 @@ const MainContent = () => {
                   </article>
                 ))}
               </div>
-            </div>
-
-            <div id="skills">
-              <Skills skills={skills} translations={translations} isRTL={isRTL} />
             </div>
           </div>
         </div>

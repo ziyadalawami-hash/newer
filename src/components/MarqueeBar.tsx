@@ -19,7 +19,6 @@ const MarqueeBar = () => {
   const navLinks = [
     { href: '#hero', label: 'Home' },
     { href: '#projects', label: 'Projects' },
-    { href: '#skills', label: 'Skills' },
     { href: '#contact', label: 'Contact' },
   ];
 
@@ -42,9 +41,9 @@ const MarqueeBar = () => {
 
   return (
     <>
-      <nav className={`fixed md:top-0 bottom-0 md:bottom-auto left-0 right-0 z-50 transition-colors duration-300 ${scrolled ? 'bg-black/95 shadow-lg' : 'bg-black'} md:shadow-none`}>
+      <nav className={`fixed md:top-0 bottom-0 md:bottom-auto left-0 right-0 z-40 transition-colors duration-300 ${scrolled ? 'bg-black/95 shadow-lg' : 'bg-black'} md:shadow-none`}>
         <div className="flex items-center justify-center md:justify-center h-14 md:h-10 px-6 md:px-0 relative">
-          <div className="flex md:hidden items-center justify-around w-full max-w-md">
+          <div className="flex md:hidden items-center justify-around w-full max-w-md pr-16">
             {navLinks.map((link) => (
               <a
                 key={link.href}
