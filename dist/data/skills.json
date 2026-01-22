@@ -1,0 +1,12 @@
+{
+  "en": {
+    "AI": ["PyTorch", "TensorFlow", "Scikit-learn", "Pandas", "NumPy", "OpenCV", "Keras", "Hugging Face"],
+    "Software": ["React", "TypeScript", "Node.js", "Python", "MongoDB", "PostgreSQL", "Docker", "Git"],
+    "Other": ["VS Code", "Jupyter", "Postman", "Figma", "Linux", "AWS"]
+  },
+  "ar": {
+    "AI": ["PyTorch", "TensorFlow", "Scikit-learn", "Pandas", "NumPy", "OpenCV", "Keras", "Hugging Face"],
+    "Software": ["React", "TypeScript", "Node.js", "Python", "MongoDB", "PostgreSQL", "Docker", "Git"],
+    "Other": ["VS Code", "Jupyter", "Postman", "Figma", "Linux", "AWS"]
+  }
+}
