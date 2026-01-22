@@ -166,7 +166,6 @@ const MainContent = () => {
 
                     <div
                       className={`absolute inset-0 rounded-xl overflow-hidden bg-white flex flex-col ${isCardOpen(index) ? 'card-overlay-open pointer-events-auto' : 'card-overlay-closed pointer-events-none'}`}
-                      style={{ scrollbarGutter: 'stable' }}
                     >
                       <div className={`absolute top-4 z-10 ${isRTL ? 'left-4' : 'right-4'}`}>
                         <button
@@ -180,8 +179,8 @@ const MainContent = () => {
                         </button>
                       </div>
 
-                      <div className="flex-1 flex flex-col p-6 pt-4 pb-20 min-h-0 overflow-y-auto" style={{ scrollbarGutter: 'stable' }}>
-                        <div className="mb-3">
+                      <div className={`flex-1 flex flex-col pt-4 pb-20 min-h-0 overflow-y-auto ${isRTL ? 'pr-6' : 'pl-6'}`}>
+                        <div className={`mb-3 ${isRTL ? 'ml-6' : 'mr-6'}`}>
                           <h2 className="text-lg font-bold text-gray-800 mb-3">
                             {project.title}
                           </h2>
@@ -205,7 +204,7 @@ const MainContent = () => {
                           </div>
                         </div>
 
-                        <div className="space-y-1">
+                        <div className={`space-y-1 ${isRTL ? 'ml-6' : 'mr-6'}`}>
                           {project.content ? parseContent(project.content, isRTL) : (
                             <p className="text-gray-600 text-sm">{project.description}</p>
                           )}
