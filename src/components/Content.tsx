@@ -165,9 +165,9 @@ const MainContent = () => {
                     </div>
 
                     <div
-                      className={`absolute inset-0 rounded-xl overflow-hidden bg-white flex flex-col ${isCardOpen(index) ? 'card-overlay-open pointer-events-auto' : 'card-overlay-closed pointer-events-none'}`}
+                      className={`absolute inset-0 rounded-xl overflow-hidden bg-white flex flex-col pointer-events-none ${isCardOpen(index) ? 'card-overlay-open' : 'card-overlay-closed'}`}
                     >
-                      <div className={`absolute top-4 z-10 ${isRTL ? 'left-4' : 'right-4'}`}>
+                      <div className={`absolute top-4 z-10 ${isRTL ? 'left-4' : 'right-4'} pointer-events-auto`}>
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
@@ -179,7 +179,7 @@ const MainContent = () => {
                         </button>
                       </div>
 
-                      <div className="flex-1 flex flex-col p-6 pt-4 pb-20 min-h-0 overflow-y-auto">
+                      <div className="flex-1 flex flex-col p-6 pt-4 pb-20 min-h-0 overflow-y-auto pointer-events-auto">
                         <div className="mb-3">
                           <h2 className="text-lg font-bold text-gray-800 mb-3">
                             {project.title}
@@ -211,7 +211,7 @@ const MainContent = () => {
                         </div>
                       </div>
 
-                      <div className="absolute bottom-0 left-0 right-0 px-6 py-4 flex gap-3 bg-white/99 backdrop-blur-sm">
+                      <div className="absolute bottom-0 left-0 right-0 px-6 py-4 flex gap-3 bg-white/99 backdrop-blur-sm pointer-events-auto">
                         {project.github && (
                           <a
                             href={project.github}
