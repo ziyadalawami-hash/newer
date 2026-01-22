@@ -184,7 +184,7 @@ const MainContent = () => {
                           <h2 className="text-lg font-bold text-gray-800 mb-3">
                             {project.title}
                           </h2>
-                          <div className="flex flex-wrap gap-1.5 mb-1">
+                          <div className="flex flex-wrap gap-1.5 mb-0.5">
                             {project.categories.map((cat, idx) => (
                               <span
                                 key={idx}
