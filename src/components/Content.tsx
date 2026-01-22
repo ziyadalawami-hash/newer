@@ -211,14 +211,14 @@ const MainContent = () => {
                         </div>
                       </div>
 
-                      <div className="absolute bottom-0 left-0 right-0 px-6 py-4 flex gap-3 bg-white/99 backdrop-blur-sm pointer-events-auto z-20">
+                      <div className="absolute bottom-0 left-0 right-0 px-6 py-4 flex gap-3 bg-white/99 backdrop-blur-sm pointer-events-none z-20">
                         {project.github && (
                           <a
                             href={project.github}
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
-                            className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-gray-800 text-white rounded-lg hover:bg-[#1fea00] hover:text-black transition-all duration-200 text-sm font-semibold"
+                            className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-gray-800 text-white rounded-lg hover:bg-[#1fea00] hover:text-black transition-all duration-200 text-sm font-semibold pointer-events-auto"
                           >
                             <GitBranch size={16} />
                             <span>Repo</span>
@@ -230,7 +230,7 @@ const MainContent = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
-                            className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-[#27a102] text-white rounded-lg hover:bg-[#1fea00] hover:text-black transition-all duration-200 text-sm font-semibold"
+                            className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-[#27a102] text-white rounded-lg hover:bg-[#1fea00] hover:text-black transition-all duration-200 text-sm font-semibold pointer-events-auto"
                           >
                             <ExternalLink size={16} />
                             <span>Demo</span>
