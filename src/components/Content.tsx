@@ -166,6 +166,7 @@ const MainContent = () => {
 
                     <div
                       className={`absolute inset-0 rounded-xl overflow-hidden bg-white flex flex-col ${isCardOpen(index) ? 'card-overlay-open pointer-events-auto' : 'card-overlay-closed pointer-events-none'}`}
+                      style={{ scrollbarGutter: 'stable' }}
                     >
                       <div className={`absolute top-4 z-10 ${isRTL ? 'left-4' : 'right-4'}`}>
                         <button
@@ -179,7 +180,7 @@ const MainContent = () => {
                         </button>
                       </div>
 
-                      <div className="flex-1 flex flex-col p-6 pt-4 pb-20 min-h-0 overflow-y-auto">
+                      <div className="flex-1 flex flex-col p-6 pt-4 pb-20 min-h-0 overflow-y-auto" style={{ scrollbarGutter: 'stable' }}>
                         <div className="mb-3">
                           <h2 className="text-lg font-bold text-gray-800 mb-3">
                             {project.title}
