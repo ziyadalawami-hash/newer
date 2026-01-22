@@ -26,7 +26,7 @@ const Header = ({ data, isRTL }: HeaderProps) => {
   };
 
   return (
-    <header className="bg-[#001a03] w-full">
+    <header className="bg-[#001a03] w-full pt-10 md:pt-0">
       <div className="max-w-[1000px] mx-auto bg-[#001a03] px-6 py-8 md:py-12" style={{ direction: isRTL ? 'rtl' : 'ltr' }}>
         <div className="text-center">
           <div className="mb-6 flex justify-center">
