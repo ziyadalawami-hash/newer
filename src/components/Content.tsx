@@ -167,7 +167,7 @@ const MainContent = () => {
                     <div
                       className={`absolute inset-0 rounded-xl overflow-hidden bg-white flex flex-col pointer-events-none ${isCardOpen(index) ? 'card-overlay-open' : 'card-overlay-closed'}`}
                     >
-                      <div className={`absolute top-4 z-10 ${isRTL ? 'left-4' : 'right-4'} pointer-events-auto`}>
+                      <div className={`absolute top-4 ${isRTL ? 'left-4' : 'right-4'} pointer-events-auto`}>
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
@@ -179,31 +179,31 @@ const MainContent = () => {
                         </button>
                       </div>
 
-                      <div className="px-6 pt-4 pb-3 pointer-events-auto">
-                        <h2 className="text-lg font-bold text-gray-800 mb-3">
-                          {project.title}
-                        </h2>
-                        <div className="flex flex-wrap gap-1.5">
-                          {project.categories.map((cat, idx) => (
-                            <span
-                              key={idx}
-                              className="px-2 py-1 text-xs font-medium bg-[#27a102]/10 text-[#27a102] rounded border border-[#27a102]/20"
-                            >
-                              {cat}
-                            </span>
-                          ))}
-                          {project.tags.map((tag, idx) => (
-                            <span
-                              key={idx}
-                              className="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded"
-                            >
-                              {tag}
-                            </span>
-                          ))}
+                      <div className="flex-1 flex flex-col p-6 pt-4 pb-20 min-h-0 overflow-y-auto pointer-events-auto relative">
+                        <div className="mb-3">
+                          <h2 className="text-lg font-bold text-gray-800 mb-3">
+                            {project.title}
+                          </h2>
+                          <div className="flex flex-wrap gap-1.5 mb-0.5">
+                            {project.categories.map((cat, idx) => (
+                              <span
+                                key={idx}
+                                className="px-2 py-1 text-xs font-medium bg-[#27a102]/10 text-[#27a102] rounded border border-[#27a102]/20"
+                              >
+                                {cat}
+                              </span>
+                            ))}
+                            {project.tags.map((tag, idx) => (
+                              <span
+                                key={idx}
+                                className="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
                         </div>
-                      </div>
 
-                      <div className="flex-1 px-6 pb-20 min-h-0 overflow-y-auto pointer-events-auto">
                         <div className="space-y-1">
                           {project.content ? parseContent(project.content, isRTL) : (
                             <p className="text-gray-600 text-sm">{project.description}</p>
