@@ -112,7 +112,7 @@ const MainContent = () => {
                         </button>
                       </div>
 
-                      <div className="flex-1 flex flex-col p-6 pt-4 min-h-0">
+                      <div className="flex-1 flex flex-col p-6 pt-4 pb-20 min-h-0 overflow-y-auto">
                         <div className="mb-0">
                           <h2 className="text-lg font-bold text-gray-800 mb-93">
                             {project.title}
@@ -137,36 +137,32 @@ const MainContent = () => {
                           </div>
                         </div>
 
-                        <div className="flex-1 flex flex-col min-h-0">
-                          <div className="overflow-y-scroll max-h-[280px] pb-24">
-                            <p className="text-gray-600 text-sm mb-2">
-                              {project.description}
-                            </p>
+                        <p className="text-gray-600 text-sm mb-2">
+                          {project.description}
+                        </p>
 
-                            <div className="mb-4">
-                              <p className="text-sm font-semibold text-gray-700 mb-3">
-                                {isRTL ? 'المساهمة:' : 'Contribution:'}
-                              </p>
-                              <ul className={`text-sm text-gray-600 space-y-1 ${isRTL ? 'mr-4' : 'ml-4'}`}>
-                                {project.achievements.map((a, i) => (
-                                  <li key={i} className="list-disc">{a}</li>
-                                ))}
-                              </ul>
-                            </div>
+                        <div className="mb-4">
+                          <p className="text-sm font-semibold text-gray-700 mb-3">
+                            {isRTL ? 'المساهمة:' : 'Contribution:'}
+                          </p>
+                          <ul className={`text-sm text-gray-600 space-y-1 ${isRTL ? 'mr-4' : 'ml-4'}`}>
+                            {project.achievements.map((a, i) => (
+                              <li key={i} className="list-disc">{a}</li>
+                            ))}
+                          </ul>
+                        </div>
 
-                            <div className="mb-0">
-                              <p className="text-sm font-semibold text-gray-700 mb-3">{t.keyImpact}</p>
-                              <ul className={`text-sm text-gray-600 space-y-1 ${isRTL ? 'mr-4' : 'ml-4'}`}>
-                                {project.achievements.map((a, i) => (
-                                  <li key={i} className="list-disc">{a}</li>
-                                ))}
-                              </ul>
-                            </div>
-                          </div>
+                        <div className="mb-0">
+                          <p className="text-sm font-semibold text-gray-700 mb-3">{t.keyImpact}</p>
+                          <ul className={`text-sm text-gray-600 space-y-1 ${isRTL ? 'mr-4' : 'ml-4'}`}>
+                            {project.achievements.map((a, i) => (
+                              <li key={i} className="list-disc">{a}</li>
+                            ))}
+                          </ul>
                         </div>
                       </div>
 
-                      <div className="px-6 py-4 border-t border-gray-100/0 flex gap-3 flex-shrink-0 relative">
+                      <div className="absolute bottom-0 left-0 right-0 px-6 py-4 flex gap-3">
                         {project.github && (
                           <a
                             href={project.github}
