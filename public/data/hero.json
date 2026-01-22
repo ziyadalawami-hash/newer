@@ -1,0 +1,16 @@
+{
+  "en": {
+    "name": "Ziyad Ahmed",
+    "title": "AI Engineer",
+    "description": "Architecting intelligent systems that turn raw data into decisive action. Let's automate your future.",
+    "exploreWork": "Explore My Work",
+    "viewCV": "View CV"
+  },
+  "ar": {
+    "name": "زياد أحمد",
+    "title": "مهندس ذكاء اصطناعي",
+    "description": "ابني أنظمة ذكية تحول البيانات الخام إلى قرارات حاسمة. لنصنع مستقبل أعمالك آلياً.",
+    "exploreWork": "استكشف أعمالي",
+    "viewCV": "عرض السيرة الذاتية"
+  }
+}
