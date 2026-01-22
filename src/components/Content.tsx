@@ -112,7 +112,7 @@ const MainContent = () => {
                         </button>
                       </div>
 
-                      <div className="flex-1 flex flex-col p-6 pt-4 min-h-0">
+                      <div className="flex-1 flex flex-col p-6 pt-4 min-h-0 relative">
                         <div className="mb-0">
                           <h2 className="text-lg font-bold text-gray-800 mb-93">
                             {project.title}
@@ -137,8 +137,8 @@ const MainContent = () => {
                           </div>
                         </div>
 
-                        <div className="flex-1 flex flex-col min-h-0 relative">
-                          <div className="overflow-y-scroll max-h-[280px]">
+                        <div className="flex-1 flex flex-col min-h-0">
+                          <div className="overflow-y-scroll max-h-[280px] pb-24">
                             <p className="text-gray-600 text-sm mb-2">
                               {project.description}
                             </p>
@@ -163,11 +163,12 @@ const MainContent = () => {
                               </ul>
                             </div>
                           </div>
-                          <div className="absolute bottom-0 left-0 right-0 h-12 bg-white/80 pointer-events-none"></div>
                         </div>
+
+                        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/95 to-white/0 pointer-events-none"></div>
                       </div>
 
-                      <div className="bg-white/95 px-6 py-4 border-t border-gray-100 flex gap-3 flex-shrink-0">
+                      <div className="bg-white px-6 py-4 border-t border-gray-100 flex gap-3 flex-shrink-0 relative z-10">
                         {project.github && (
                           <a
                             href={project.github}
