@@ -17,9 +17,9 @@ const MarqueeBar = () => {
   }, []);
 
   const navLinks = [
-    { href: '#hero', label: 'Home' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#contact', label: 'Contact' },
+    { href: '#hero', label: 'Ziyad', isName: true },
+    { href: '#projects', label: 'Projects', isName: false },
+    { href: '#contact', label: 'Contact', isName: false },
   ];
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -49,7 +49,7 @@ const MarqueeBar = () => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleClick(e, link.href)}
-                className="text-white hover:text-[#1fea00] transition-colors text-sm"
+                className={`text-white hover:text-[#1fea00] transition-colors text-sm ${link.isName ? 'font-bold tracking-wider' : ''}`}
               >
                 {link.label}
               </a>
@@ -62,7 +62,7 @@ const MarqueeBar = () => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleClick(e, link.href)}
-                className="text-white hover:text-[#1fea00] transition-colors"
+                className={`text-white hover:text-[#1fea00] transition-colors ${link.isName ? 'font-bold tracking-wider' : ''}`}
               >
                 {link.label}
               </a>
