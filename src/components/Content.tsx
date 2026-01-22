@@ -167,7 +167,7 @@ const MainContent = () => {
                     <div
                       className={`absolute inset-0 rounded-xl overflow-hidden bg-white flex flex-col pointer-events-none ${isCardOpen(index) ? 'card-overlay-open' : 'card-overlay-closed'}`}
                     >
-                      <div className={`absolute top-4 z-1 ${isRTL ? 'left-4' : 'right-4'} pointer-events-auto`}>
+                      <div className={`absolute top-4 z-2 ${isRTL ? 'left-4' : 'right-4'} pointer-events-auto`}>
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
@@ -179,7 +179,7 @@ const MainContent = () => {
                         </button>
                       </div>
 
-                      <div className="flex-1 flex flex-col p-6 pt-4 pb-20 min-h-0 overflow-y-auto pointer-events-auto relative z-1">
+                      <div className="flex-1 flex flex-col p-6 pt-4 pb-20 min-h-0 overflow-y-auto pointer-events-auto relative z-2">
                         <div className="mb-3">
                           <h2 className="text-lg font-bold text-gray-800 mb-3">
                             {project.title}
