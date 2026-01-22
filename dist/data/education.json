@@ -1,0 +1,38 @@
+{
+  "en": [
+    {
+      "institution": "The British University in Egypt",
+      "degree": "Bachelor of Science in Informatics and Computer Science",
+      "period": "Sep 2020 - Jul 2024",
+      "description": "Specialized in Artificial Intelligence",
+      "achievements": [],
+      "logo": "/images/bue-logo.png"
+    },
+    {
+      "institution": "AI & ML Bootcamp",
+      "degree": "Advanced Certificate in Machine Learning",
+      "period": "Jun 2023 - Sep 2023",
+      "description": "Intensive program covering deep learning, NLP, and computer vision",
+      "achievements": [],
+      "logo": ""
+    }
+  ],
+  "ar": [
+    {
+      "institution": "الجامعة البريطانية في مصر",
+      "degree": "بكالوريوس العلوم في المعلوماتية وعلوم الحاسب",
+      "period": "سبتمبر 2020 - يوليو 2024",
+      "description": "تخصص في الذكاء الاصطناعي",
+      "achievements": [],
+      "logo": "/images/bue-logo.png"
+    },
+    {
+      "institution": "معسكر الذكاء الاصطناعي والتعلم الآلي",
+      "degree": "شهادة متقدمة في التعلم الآلي",
+      "period": "يونيو 2023 - سبتمبر 2023",
+      "description": "برنامج مكثف يغطي التعلم العميق ومعالجة اللغات الطبيعية والرؤية الحاسوبية",
+      "achievements": [],
+      "logo": ""
+    }
+  ]
+}
