@@ -165,9 +165,9 @@ const MainContent = () => {
                     </div>
 
                     <div
-                      className={`absolute inset-0 rounded-xl overflow-hidden bg-white flex flex-col ${isCardOpen(index) ? 'card-overlay-open pointer-events-auto' : 'card-overlay-closed pointer-events-none'}`}
+                      className={`absolute inset-0 rounded-xl overflow-hidden bg-white flex flex-col pointer-events-none ${isCardOpen(index) ? 'card-overlay-open' : 'card-overlay-closed'}`}
                     >
-                      <div className={`absolute top-4 z-10 ${isRTL ? 'left-4' : 'right-4'}`}>
+                      <div className={`absolute top-4 ${isRTL ? 'left-4' : 'right-4'} pointer-events-auto`}>
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
@@ -179,7 +179,7 @@ const MainContent = () => {
                         </button>
                       </div>
 
-                      <div className="flex-1 flex flex-col p-6 pt-4 pb-20 min-h-0 overflow-y-auto">
+                      <div className="flex-1 flex flex-col p-6 pt-4 pb-20 min-h-0 overflow-y-auto pointer-events-auto relative">
                         <div className="mb-3">
                           <h2 className="text-lg font-bold text-gray-800 mb-3">
                             {project.title}
@@ -211,14 +211,14 @@ const MainContent = () => {
                         </div>
                       </div>
 
-                      <div className="absolute bottom-0 left-0 right-0 px-6 py-4 flex gap-3 bg-white/99 backdrop-blur-sm">
+                      <div className="absolute bottom-0 left-0 right-0 px-6 py-4 flex gap-3 bg-white/99 backdrop-blur-sm pointer-events-none">
                         {project.github && (
                           <a
                             href={project.github}
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
-                            className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-gray-800 text-white rounded-lg hover:bg-[#1fea00] hover:text-black transition-all duration-200 text-sm font-semibold"
+                            className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-gray-800 text-white rounded-lg hover:bg-[#1fea00] hover:text-black transition-all duration-200 text-sm font-semibold pointer-events-auto"
                           >
                             <GitBranch size={16} />
                             <span>Repo</span>
@@ -230,7 +230,7 @@ const MainContent = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
-                            className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-[#27a102] text-white rounded-lg hover:bg-[#1fea00] hover:text-black transition-all duration-200 text-sm font-semibold"
+                            className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-[#27a102] text-white rounded-lg hover:bg-[#1fea00] hover:text-black transition-all duration-200 text-sm font-semibold pointer-events-auto"
                           >
                             <ExternalLink size={16} />
                             <span>Demo</span>
