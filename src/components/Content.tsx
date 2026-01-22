@@ -32,73 +32,6 @@ const MainContent = () => {
 
   const isCardOpen = (index: number) => expandedProject === index;
 
-  const parseContent = (content: string, isRTL: boolean) => {
-    const lines = content.split('\n');
-    const elements: JSX.Element[] = [];
-    let key = 0;
-
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i].trim();
-
-      if (!line) {
-        continue;
-      }
-
-      if (line.startsWith('*') && !line.startsWith('**')) {
-        const text = line.substring(1).trim();
-        const parsedText = parseBoldText(text);
-        elements.push(
-          <li key={key++} className={`text-sm text-gray-600 ${isRTL ? 'mr-4' : 'ml-4'} list-disc`}>
-            {parsedText}
-          </li>
-        );
-      } else if (line.startsWith('**') && line.endsWith('**')) {
-        const text = line.substring(2, line.length - 2);
-        elements.push(
-          <p key={key++} className="text-sm font-semibold text-gray-700 mt-3 mb-2">
-            {text}
-          </p>
-        );
-      } else {
-        const parsedText = parseBoldText(line);
-        elements.push(
-          <p key={key++} className="text-sm text-gray-600 mb-2">
-            {parsedText}
-          </p>
-        );
-      }
-    }
-
-    return elements;
-  };
-
-  const parseBoldText = (text: string): (string | JSX.Element)[] => {
-    const parts: (string | JSX.Element)[] = [];
-    let currentIndex = 0;
-    let key = 0;
-
-    const boldRegex = /\*\*(.*?)\*\*/g;
-    let match;
-
-    while ((match = boldRegex.exec(text)) !== null) {
-      if (match.index > currentIndex) {
-        parts.push(text.substring(currentIndex, match.index));
-      }
-      parts.push(
-        <strong key={key++} className="font-semibold text-gray-800">
-          {match[1]}
-        </strong>
-      );
-      currentIndex = match.index + match[0].length;
-    }
-
-    if (currentIndex < text.length) {
-      parts.push(text.substring(currentIndex));
-    }
-
-    return parts.length > 0 ? parts : [text];
-  };
-
   return (
     <div>
       <div id="hero">
@@ -180,11 +113,11 @@ const MainContent = () => {
                       </div>
 
                       <div className="flex-1 flex flex-col p-6 pt-4 pb-20 min-h-0 overflow-y-auto">
-                        <div className="mb-3">
-                          <h2 className="text-lg font-bold text-gray-800 mb-3">
+                        <div className="mb-0">
+                          <h2 className="text-lg font-bold text-gray-800 mb-93">
                             {project.title}
                           </h2>
-                          <div className="flex flex-wrap gap-1.5 mb-0.5">
+                          <div className="flex flex-wrap gap-1.5 mb-3">
                             {project.categories.map((cat, idx) => (
                               <span
                                 key={idx}
@@ -204,14 +137,32 @@ const MainContent = () => {
                           </div>
                         </div>
 
-                        <div className="space-y-1">
-                          {project.content ? parseContent(project.content, isRTL) : (
-                            <p className="text-gray-600 text-sm">{project.description}</p>
-                          )}
+                        <p className="text-gray-600 text-sm mb-2">
+                          {project.description}
+                        </p>
+
+                        <div className="mb-4">
+                          <p className="text-sm font-semibold text-gray-700 mb-3">
+                            {isRTL ? 'المساهمة:' : 'Contribution:'}
+                          </p>
+                          <ul className={`text-sm text-gray-600 space-y-1 ${isRTL ? 'mr-4' : 'ml-4'}`}>
+                            {project.achievements.map((a, i) => (
+                              <li key={i} className="list-disc">{a}</li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div className="mb-0">
+                          <p className="text-sm font-semibold text-gray-700 mb-3">{t.keyImpact}</p>
+                          <ul className={`text-sm text-gray-600 space-y-1 ${isRTL ? 'mr-4' : 'ml-4'}`}>
+                            {project.achievements.map((a, i) => (
+                              <li key={i} className="list-disc">{a}</li>
+                            ))}
+                          </ul>
                         </div>
                       </div>
 
-                      <div className="absolute bottom-0 left-6 right-6 py-4 flex gap-3 bg-white/99 backdrop-blur-sm">
+                      <div className="absolute bottom-0 left-0 right-0 px-6 py-4 flex gap-3">
                         {project.github && (
                           <a
                             href={project.github}
