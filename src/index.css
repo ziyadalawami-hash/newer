@@ -27,11 +27,13 @@ body {
 
 ::-webkit-scrollbar-track {
   background: #001a03;
+  border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #1c6000;
   border-radius: 6px;
+  border: 2px solid #001a03;
 }
 
 ::-webkit-scrollbar-thumb:hover {
