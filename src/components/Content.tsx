@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GitBranch, ExternalLink, Briefcase, GraduationCap } from 'lucide-react';
+import { GitBranch, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { usePortfolioData } from '../hooks/usePortfolioData';
 import Hero from './Hero';
@@ -20,7 +20,7 @@ const MainContent = () => {
     );
   }
 
-  const { hero: heroData, translations, projects: projectsList, experience: experiences, education, skills } = data;
+  const { hero: heroData, translations, projects: projectsList, skills } = data;
   const t = translations;
 
   const handleCardClick = (index: number) => {
@@ -202,120 +202,6 @@ const MainContent = () => {
             <div id="skills">
               <Skills skills={skills} translations={translations} isRTL={isRTL} />
             </div>
-
-            <section id="experience" className="pt-8" aria-labelledby="experience-heading">
-              <h2 id="experience-heading" className="text-3xl font-bold text-white mb-8 text-center">
-                {t.workExperience}
-              </h2>
-              <div className="relative">
-                <div className={`absolute ${isRTL ? 'right-[19.5px]' : 'left-[19.5px]'} top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#27a102] via-[#1c6000] to-[#1c6000]/50`}></div>
-                <div className="space-y-8">
-                  {experiences.map((exp, index) => (
-                    <article
-                      key={index}
-                      className={`relative ${isRTL ? 'pr-16' : 'pl-16'} group`}
-                    >
-                      <div className={`absolute ${isRTL ? 'right-[7px]' : 'left-[7px]'} top-4 w-[26px] h-[26px] bg-[#27a102] rounded-full border-[3px] border-[#001a03] transition-all duration-300 group-hover:scale-110 group-hover:bg-[#1fea00] z-10 flex items-center justify-center`}>
-                        <Briefcase size={12} className="text-[#001a03]" />
-                      </div>
-                      <div className="bg-[#001a03]/40 border-2 border-[#1c6000]/40 rounded-lg p-6 transition-all duration-300 hover:border-[#27a102]/70 hover:bg-[#001a03]/60">
-                        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-                          <div className="flex-1 min-w-0">
-                            <h3 className="text-[#1fea00] text-xl font-bold mb-2">
-                              {exp.role}
-                            </h3>
-                            <p className="text-white text-lg font-medium mb-1">{exp.company}</p>
-                            <p className="text-[#27a102]/80 text-sm font-medium">{exp.period}</p>
-                          </div>
-                          {exp.logo && (
-                            <div className="hidden md:block w-20 h-20 flex-shrink-0">
-                              <img
-                                src={exp.logo}
-                                alt={exp.company}
-                                loading="lazy"
-                                decoding="async"
-                                draggable="false"
-                                width="80"
-                                height="80"
-                                className="w-full h-full object-contain rounded-xl p-3 transition-all duration-300 hover:scale-[1.02]"
-                              />
-                            </div>
-                          )}
-                        </div>
-                        <p className="text-white/80 leading-relaxed mb-4">{exp.description}</p>
-                        {exp.achievements && exp.achievements.length > 0 && (
-                          <ul className="space-y-2.5" dir={isRTL ? 'rtl' : 'ltr'}>
-                            {exp.achievements.map((achievement, idx) => (
-                              <li key={idx} className="text-white/70 text-sm flex gap-3 items-start">
-                                <span className="text-[#27a102] text-base leading-none mt-0.5 flex-shrink-0">•</span>
-                                <span className="flex-1">{achievement}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            <section id="education" className="pt-8" aria-labelledby="education-heading">
-              <h2 id="education-heading" className="text-3xl font-bold text-white mb-8 text-center">
-                {t.education}
-              </h2>
-              <div className="relative">
-                <div className={`absolute ${isRTL ? 'right-[19.5px]' : 'left-[19.5px]'} top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#27a102] via-[#1c6000] to-[#1c6000]/50`}></div>
-                <div className="space-y-8">
-                  {education.map((item, index) => (
-                    <article
-                      key={index}
-                      className={`relative ${isRTL ? 'pr-16' : 'pl-16'} group`}
-                    >
-                      <div className={`absolute ${isRTL ? 'right-[7px]' : 'left-[7px]'} top-4 w-[26px] h-[26px] bg-[#27a102] rounded-full border-[3px] border-[#001a03] transition-all duration-300 group-hover:scale-110 group-hover:bg-[#1fea00] z-10 flex items-center justify-center`}>
-                        <GraduationCap size={12} className="text-[#001a03]" />
-                      </div>
-                      <div className="bg-[#001a03]/40 border-2 border-[#1c6000]/40 rounded-lg p-6 transition-all duration-300 hover:border-[#27a102]/70 hover:bg-[#001a03]/60">
-                        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-                          <div className="flex-1 min-w-0">
-                            <h3 className="text-[#1fea00] text-xl font-bold mb-2">
-                              {item.institution}
-                            </h3>
-                            <p className="text-white text-lg font-medium mb-1">{item.degree}</p>
-                            <p className="text-[#27a102]/80 text-sm font-medium">{item.period}</p>
-                          </div>
-                          {item.logo && (
-                            <div className="hidden md:block w-20 h-20 flex-shrink-0">
-                              <img
-                                src={item.logo}
-                                alt={item.institution}
-                                loading="lazy"
-                                decoding="async"
-                                draggable="false"
-                                width="80"
-                                height="80"
-                                className="w-full h-full object-contain rounded-xl p-3 transition-all duration-300 hover:scale-[1.02]"
-                              />
-                            </div>
-                          )}
-                        </div>
-                        <p className="text-white/80 leading-relaxed mb-4">{item.description}</p>
-                        {item.achievements && item.achievements.length > 0 && (
-                          <ul className="space-y-2.5" dir={isRTL ? 'rtl' : 'ltr'}>
-                            {item.achievements.map((achievement, idx) => (
-                              <li key={idx} className="text-white/70 text-sm flex gap-3 items-start">
-                                <span className="text-[#27a102] text-base leading-none mt-0.5 flex-shrink-0">•</span>
-                                <span className="flex-1">{achievement}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            </section>
           </div>
         </div>
       </section>
