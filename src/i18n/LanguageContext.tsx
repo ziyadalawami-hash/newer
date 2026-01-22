@@ -42,7 +42,6 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
     updateURLLanguage(lang);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   useEffect(() => {

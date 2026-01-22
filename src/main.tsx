@@ -6,6 +6,9 @@ import { LanguageProvider } from './i18n/LanguageContext';
 
 function RootComponent() {
   useEffect(() => {
+    if (window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
     window.scrollTo(0, 0);
     window.history.scrollRestoration = 'manual';
   }, []);
