@@ -179,7 +179,7 @@ const MainContent = () => {
                         </button>
                       </div>
 
-                      <div className="flex-1 flex flex-col p-6 pt-4 pb-20 min-h-0 overflow-y-auto pointer-events-auto">
+                      <div className="flex-1 flex flex-col p-6 pt-4 pb-20 min-h-0 overflow-y-auto pointer-events-auto relative z-10">
                         <div className="mb-3">
                           <h2 className="text-lg font-bold text-gray-800 mb-3">
                             {project.title}
@@ -211,7 +211,7 @@ const MainContent = () => {
                         </div>
                       </div>
 
-                      <div className="absolute bottom-0 left-0 right-0 px-6 py-4 flex gap-3 bg-white/99 backdrop-blur-sm pointer-events-auto">
+                      <div className="absolute bottom-0 left-0 right-0 px-6 py-4 flex gap-3 bg-white/99 backdrop-blur-sm pointer-events-auto z-0">
                         {project.github && (
                           <a
                             href={project.github}
