@@ -48,21 +48,21 @@ const MainContent = () => {
         const text = line.substring(1).trim();
         const parsedText = parseBoldText(text);
         elements.push(
-          <li key={key++} className={`text-sm text-gray-600 ${isRTL ? 'mr-4' : 'ml-4'} list-disc`}>
+          <li key={key++} className={`text-sm text-gray-700 ${isRTL ? 'mr-5' : 'ml-5'} list-disc leading-relaxed`}>
             {parsedText}
           </li>
         );
       } else if (line.startsWith('**') && line.endsWith('**')) {
         const text = line.substring(2, line.length - 2);
         elements.push(
-          <p key={key++} className="text-sm font-semibold text-gray-700 mt-3 mb-2">
+          <p key={key++} className="text-sm font-bold text-gray-900 mt-4 mb-2">
             {text}
           </p>
         );
       } else {
         const parsedText = parseBoldText(line);
         elements.push(
-          <p key={key++} className="text-sm text-gray-600 mb-2">
+          <p key={key++} className="text-sm text-gray-700 mb-2 leading-relaxed">
             {parsedText}
           </p>
         );
@@ -85,7 +85,7 @@ const MainContent = () => {
         parts.push(text.substring(currentIndex, match.index));
       }
       parts.push(
-        <strong key={key++} className="font-semibold text-gray-800">
+        <strong key={key++} className="font-bold text-gray-900">
           {match[1]}
         </strong>
       );
@@ -167,28 +167,28 @@ const MainContent = () => {
                     <div
                       className={`absolute inset-0 rounded-xl overflow-hidden bg-white flex flex-col pointer-events-none ${isCardOpen(index) ? 'card-overlay-open' : 'card-overlay-closed'}`}
                     >
-                      <div className={`absolute top-4 z-10 ${isRTL ? 'left-4' : 'right-4'} pointer-events-auto`}>
+                      <div className={`absolute top-4 z-20 ${isRTL ? 'left-4' : 'right-4'} pointer-events-auto`}>
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
                             handleCardClick(index);
                           }}
-                          className="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-all text-lg font-semibold"
+                          className="w-9 h-9 flex items-center justify-center text-gray-400 hover:text-gray-600 hover:bg-gray-100/80 backdrop-blur-sm rounded-full transition-all text-lg font-semibold shadow-sm"
                         >
                           ✕
                         </button>
                       </div>
 
-                      <div className="flex-1 flex flex-col p-6 pt-4 pb-20 min-h-0 overflow-y-auto pointer-events-auto relative">
-                        <div className="mb-3">
-                          <h2 className="text-lg font-bold text-gray-800 mb-3">
+                      <div className="flex-1 flex flex-col p-6 pt-5 pb-24 min-h-0 overflow-y-auto pointer-events-auto relative">
+                        <div className="mb-4">
+                          <h2 className="text-xl font-bold text-gray-900 mb-3">
                             {project.title}
                           </h2>
-                          <div className="flex flex-wrap gap-1.5 mb-0.5">
+                          <div className="flex flex-wrap gap-2">
                             {project.categories.map((cat, idx) => (
                               <span
                                 key={idx}
-                                className="px-2 py-1 text-xs font-medium bg-[#27a102]/10 text-[#27a102] rounded border border-[#27a102]/20"
+                                className="px-2.5 py-1 text-xs font-semibold bg-[#27a102]/10 text-[#27a102] rounded-md border border-[#27a102]/20"
                               >
                                 {cat}
                               </span>
@@ -196,7 +196,7 @@ const MainContent = () => {
                             {project.tags.map((tag, idx) => (
                               <span
                                 key={idx}
-                                className="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded"
+                                className="px-2.5 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded-md"
                               >
                                 {tag}
                               </span>
@@ -204,21 +204,21 @@ const MainContent = () => {
                           </div>
                         </div>
 
-                        <div className="space-y-1">
+                        <div className="space-y-2 text-gray-700 leading-relaxed">
                           {project.content ? parseContent(project.content, isRTL) : (
                             <p className="text-gray-600 text-sm">{project.description}</p>
                           )}
                         </div>
                       </div>
 
-                      <div className="absolute bottom-0 left-0 right-0 px-6 py-4 flex gap-3 pointer-events-none">
+                      <div className="absolute bottom-0 left-0 right-0 px-6 py-4 flex gap-3 pointer-events-none bg-gradient-to-t from-white via-white to-transparent">
                         {project.github && (
                           <a
                             href={project.github}
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
-                            className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-gray-800 text-white rounded-lg hover:bg-[#1fea00] hover:text-black transition-all duration-200 text-sm font-semibold pointer-events-auto"
+                            className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-gray-900 text-white rounded-lg hover:bg-[#1fea00] hover:text-black transition-all duration-200 text-sm font-semibold shadow-lg pointer-events-auto"
                           >
                             <GitBranch size={16} />
                             <span>Repo</span>
@@ -230,7 +230,7 @@ const MainContent = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
-                            className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-[#27a102] text-white rounded-lg hover:bg-[#1fea00] hover:text-black transition-all duration-200 text-sm font-semibold pointer-events-auto"
+                            className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-[#27a102] text-white rounded-lg hover:bg-[#1fea00] hover:text-black transition-all duration-200 text-sm font-semibold shadow-lg pointer-events-auto"
                           >
                             <ExternalLink size={16} />
                             <span>Demo</span>
