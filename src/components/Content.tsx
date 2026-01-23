@@ -167,13 +167,13 @@ const MainContent = () => {
                     <div
                       className={`absolute inset-0 rounded-xl overflow-hidden bg-white flex flex-col pointer-events-none ${isCardOpen(index) ? 'card-overlay-open' : 'card-overlay-closed'}`}
                     >
-                      <div className={`absolute top-4 z-20 ${isRTL ? 'left-4' : 'right-4'} pointer-events-auto`}>
+                      <div className={`absolute top-4 z-10 ${isRTL ? 'left-4' : 'right-4'} pointer-events-auto`}>
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
                             handleCardClick(index);
                           }}
-                          className="w-9 h-9 flex items-center justify-center text-gray-400 hover:text-gray-600 hover:bg-gray-100/80 backdrop-blur-sm rounded-full transition-all text-lg font-semibold shadow-sm"
+                          className="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-all text-lg font-semibold"
                         >
                           ✕
                         </button>
