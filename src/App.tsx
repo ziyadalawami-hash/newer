@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import Content from './components/Content';
 import MarqueeBar from './components/MarqueeBar';
 import { useLanguage } from './i18n/LanguageContext';

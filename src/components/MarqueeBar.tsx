@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Languages, Menu, X } from 'lucide-react';
+import { Languages } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { smoothScrollTo } from '../utils/smoothScroll';
 
 const MarqueeBar = () => {
-  const { language, setLanguage, isRTL } = useLanguage();
-  const [isOpen, setIsOpen] = useState(false);
+  const { language, setLanguage } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -31,12 +30,7 @@ const MarqueeBar = () => {
       const offsetPosition = elementPosition + window.pageYOffset - navHeight;
 
       smoothScrollTo(offsetPosition, 800);
-      setIsOpen(false);
     }
-  };
-
-  const handleMenuClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
   };
 
   return (

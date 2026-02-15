@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { GitBranch, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { usePortfolioData } from '../hooks/usePortfolioData';
@@ -9,17 +9,7 @@ import Contact from './Contact';
 const MainContent = () => {
   const [expandedProject, setExpandedProject] = useState<number | null>(null);
   const { language, isRTL } = useLanguage();
-  const { data, loading } = usePortfolioData(language);
-
-  if (loading || !data) {
-    return (
-      <div className="min-h-screen bg-[#000a01] flex items-center justify-center">
-        <div className="w-16 h-16 border-4 border-[#1fea00] border-t-transparent rounded-full animate-spin"></div>
-      </div>
-    );
-  }
-
-  const { hero: heroData, translations, projects: projectsList } = data;
+  const { hero: heroData, translations, projects: projectsList } = usePortfolioData(language);
   const t = translations;
 
   const handleCardClick = (index: number) => {

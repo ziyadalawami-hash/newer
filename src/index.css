@@ -20,7 +20,6 @@ body {
   font-optical-sizing: auto;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -40,89 +39,23 @@ body {
   background: #27a102;
 }
 
-/* Smooth transitions */
 a, button {
   @apply transition-all duration-300;
 }
 
-/* Custom focus styles */
 :focus {
   @apply outline-none ring-2 ring-[#1fea00] ring-opacity-50 ring-offset-2 ring-offset-[#001a03];
 }
 
-/* Prevent layout shift on page load */
 * {
   @apply antialiased;
 }
 
-/* Enhanced text rendering */
 h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
   letter-spacing: -0.025em;
 }
 
-/* Smooth animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.6s ease-out forwards;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fadeInUp {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-@keyframes fadeInSlideRight {
-  0% {
-    opacity: 0;
-    transform: translateX(30px) translateZ(0);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) translateZ(0);
-  }
-}
-
-@keyframes fadeInSlideLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-30px) translateZ(0);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) translateZ(0);
-  }
-}
-
-.animate-fadeInSlideRight {
-  animation: fadeInSlideRight 0.6s ease-out both;
-  will-change: transform, opacity;
-}
-
-.animate-fadeInSlideLeft {
-  animation: fadeInSlideLeft 0.6s ease-out both;
-  will-change: transform, opacity;
-}
-
-/* Card open/close animations */
 .card-overlay-open {
   transform: translateY(0) translateZ(0);
   opacity: 1;
@@ -137,7 +70,6 @@ h1, h2, h3, h4, h5, h6 {
   will-change: transform, opacity;
 }
 
-/* Performance optimizations - Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -148,20 +80,12 @@ h1, h2, h3, h4, h5, h6 {
     scroll-behavior: auto !important;
   }
 
-  /* But keep essential animations visible with reduced motion */
-  .animate-fadeInSlideRight,
-  .animate-fadeInSlideLeft {
-    animation-duration: 0.2s !important;
-  }
-
   .card-overlay-open,
   .card-overlay-closed {
     transition-duration: 0.2s !important;
   }
 }
 
-/* Keep scrollbar on the right always - HTML is forced LTR for scrollbar positioning */
-/* RTL text direction is handled per-element via inline styles in components */
 html {
   overflow-y: scroll;
   direction: ltr;
