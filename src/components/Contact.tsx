@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Send, X } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 interface ContactProps {
   translations: any;
@@ -13,6 +14,7 @@ const Contact = ({ translations, isRTL }: ContactProps) => {
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const { ref, isVisible } = useScrollReveal(0.1);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,8 +37,7 @@ const Contact = ({ translations, isRTL }: ContactProps) => {
         setStatus('error');
         setTimeout(() => setStatus('idle'), 5000);
       }
-    } catch (error) {
-      console.error('Error sending message:', error);
+    } catch {
       setStatus('error');
       setTimeout(() => setStatus('idle'), 5000);
     }
@@ -59,13 +60,21 @@ const Contact = ({ translations, isRTL }: ContactProps) => {
   const t = translations;
 
   return (
-    <section id="contact" className="py-12 bg-[#001a03]" style={{ direction: isRTL ? 'rtl' : 'ltr' }} aria-labelledby="contact-heading">
+    <section
+      id="contact"
+      ref={ref}
+      className="py-12 bg-[#001a03]"
+      style={{ direction: isRTL ? 'rtl' : 'ltr' }}
+      aria-labelledby="contact-heading"
+    >
       <div className="max-w-[1000px] mx-auto px-6">
-        <div className="max-w-2xl mx-auto bg-[#000a01]/50 border-2 border-[#1c6000]/30 rounded-xl p-6">
+        <div
+          className={`max-w-2xl mx-auto bg-[#000a01]/50 border border-[#1c6000]/20 rounded-xl p-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        >
           <h2 id="contact-heading" className="text-2xl font-bold text-white mb-2">
             {t.getInTouch}
           </h2>
-          <p className="text-white/60 text-sm mb-6">
+          <p className="text-white/50 text-sm mb-6">
             {t.getInTouchDesc}
           </p>
 
@@ -82,7 +91,7 @@ const Contact = ({ translations, isRTL }: ContactProps) => {
                   onChange={handleChange}
                   required
                   aria-required="true"
-                  className={`w-full px-3 py-2 ${isRTL ? 'pl-9' : 'pr-9'} bg-[#001a03]/60 border border-[#1c6000]/40 rounded text-white text-sm placeholder-white/40 outline-none focus:outline-none focus:ring-0 focus:border-[#27a102]/70 transition-all duration-300`}
+                  className={`w-full px-3 py-2.5 ${isRTL ? 'pl-9' : 'pr-9'} bg-[#001a03]/60 border border-[#1c6000]/30 rounded-lg text-white text-sm placeholder-white/30 outline-none focus:outline-none focus:ring-0 focus:border-[#27a102]/60 transition-all duration-300`}
                   placeholder={t.yourName}
                   disabled={status === 'sending'}
                 />
@@ -93,7 +102,7 @@ const Contact = ({ translations, isRTL }: ContactProps) => {
                     className={`absolute ${isRTL ? 'left-2' : 'right-2'} top-1/2 -translate-y-1/2 text-red-400 hover:text-red-300 transition-colors p-0 bg-transparent border-0`}
                     aria-label="Clear name field"
                   >
-                    <X size={18} />
+                    <X size={16} />
                   </button>
                 )}
               </div>
@@ -108,7 +117,7 @@ const Contact = ({ translations, isRTL }: ContactProps) => {
                   onChange={handleChange}
                   required
                   aria-required="true"
-                  className={`w-full px-3 py-2 ${isRTL ? 'pl-9' : 'pr-9'} bg-[#001a03]/60 border border-[#1c6000]/40 rounded text-white text-sm placeholder-white/40 outline-none focus:outline-none focus:ring-0 focus:border-[#27a102]/70 transition-all duration-300`}
+                  className={`w-full px-3 py-2.5 ${isRTL ? 'pl-9' : 'pr-9'} bg-[#001a03]/60 border border-[#1c6000]/30 rounded-lg text-white text-sm placeholder-white/30 outline-none focus:outline-none focus:ring-0 focus:border-[#27a102]/60 transition-all duration-300`}
                   placeholder={t.yourEmail}
                   disabled={status === 'sending'}
                 />
@@ -119,7 +128,7 @@ const Contact = ({ translations, isRTL }: ContactProps) => {
                     className={`absolute ${isRTL ? 'left-2' : 'right-2'} top-1/2 -translate-y-1/2 text-red-400 hover:text-red-300 transition-colors p-0 bg-transparent border-0`}
                     aria-label="Clear email field"
                   >
-                    <X size={18} />
+                    <X size={16} />
                   </button>
                 )}
               </div>
@@ -135,7 +144,7 @@ const Contact = ({ translations, isRTL }: ContactProps) => {
                 required
                 aria-required="true"
                 rows={4}
-                className={`w-full px-3 py-2 ${isRTL ? 'pl-9' : 'pr-9'} bg-[#001a03]/60 border border-[#1c6000]/40 rounded text-white text-sm placeholder-white/40 outline-none focus:outline-none focus:ring-0 focus:border-[#27a102]/70 transition-all duration-300 resize-none`}
+                className={`w-full px-3 py-2.5 ${isRTL ? 'pl-9' : 'pr-9'} bg-[#001a03]/60 border border-[#1c6000]/30 rounded-lg text-white text-sm placeholder-white/30 outline-none focus:outline-none focus:ring-0 focus:border-[#27a102]/60 transition-all duration-300 resize-none`}
                 placeholder={t.yourMessage}
                 disabled={status === 'sending'}
               />
@@ -146,19 +155,19 @@ const Contact = ({ translations, isRTL }: ContactProps) => {
                   className={`absolute ${isRTL ? 'left-2' : 'right-2'} top-2.5 text-red-400 hover:text-red-300 transition-colors p-0 bg-transparent border-0`}
                   aria-label="Clear message field"
                 >
-                  <X size={18} />
+                  <X size={16} />
                 </button>
               )}
             </div>
 
             {status === 'success' && (
-              <div className="p-3 bg-[#27a102]/20 border border-[#27a102]/50 rounded text-[#1fea00] text-sm text-center" role="status" aria-live="polite">
+              <div className="p-3 bg-[#27a102]/20 border border-[#27a102]/40 rounded-lg text-[#1fea00] text-sm text-center" role="status" aria-live="polite">
                 {t.messageSent}
               </div>
             )}
 
             {status === 'error' && (
-              <div className="p-3 bg-red-500/20 border border-red-500/50 rounded text-red-400 text-sm text-center" role="alert" aria-live="assertive">
+              <div className="p-3 bg-red-500/20 border border-red-500/40 rounded-lg text-red-400 text-sm text-center" role="alert" aria-live="assertive">
                 {t.messageError}
               </div>
             )}
@@ -167,7 +176,7 @@ const Contact = ({ translations, isRTL }: ContactProps) => {
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="inline-flex items-center gap-2 px-5 py-2 bg-[#27a102] text-white text-sm rounded hover:bg-[#1fea00] hover:text-black transition-all duration-300 font-medium shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#27a102] disabled:hover:text-white"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#27a102] text-white text-sm rounded-lg hover:bg-[#1fea00] hover:text-black transition-all duration-300 font-medium shadow-md shadow-[#27a102]/20 hover:shadow-lg hover:shadow-[#1fea00]/20 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#27a102] disabled:hover:text-white disabled:hover:translate-y-0"
               >
                 <Send size={16} />
                 <span>{status === 'sending' ? t.sending : t.sendMessage}</span>
