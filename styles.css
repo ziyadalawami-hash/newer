@@ -12,6 +12,7 @@
 html {
   font-feature-settings: "liga" 1, "kern" 1;
   overflow-y: scroll;
+  scrollbar-gutter: stable;
   scroll-behavior: auto;
 }
 
@@ -31,7 +32,8 @@ body {
 }
 
 a, button {
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease,
+              box-shadow 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
   cursor: pointer;
 }
 
@@ -69,8 +71,9 @@ address {
 
 /* Focus */
 :focus-visible {
-  outline: 2px solid rgba(31, 234, 0, 0.5);
-  outline-offset: 2px;
+  outline: 2px solid rgba(31, 234, 0, 0.7);
+  outline-offset: 3px;
+  border-radius: 3px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -113,6 +116,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  direction: ltr;
 }
 
 .navbar.scrolled {
@@ -139,7 +143,6 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   max-width: 1000px;
   padding: 0 24px;
-  padding-right: 56px; /* space for lang btn */
 }
 
 .nav-links {
@@ -186,6 +189,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(-50%);
   display: flex;
   justify-content: flex-end;
+  direction: ltr;
 }
 
 @media (min-width: 768px) {
@@ -343,7 +347,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 768px) {
   .hero-desc-row {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     gap: 24px;
     max-width: 672px;
     margin: 0 auto 32px;
@@ -510,11 +514,11 @@ h1, h2, h3, h4, h5, h6 {
   height: 384px;
   border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .project-card:hover:not(.card-open) {
-  transform: scale(1.02);
+  box-shadow: 0 0 0 2px rgba(39, 161, 2, 0.5), 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 /* Card front */
@@ -775,7 +779,7 @@ h1, h2, h3, h4, h5, h6 {
    CONTACT
    ========================================================= */
 .contact-section {
-  padding: 48px 0;
+  padding: 48px 0 96px;
   background-color: #001a03;
 }
 
@@ -956,7 +960,6 @@ h1, h2, h3, h4, h5, h6 {
 .footer {
   background-color: #000000;
   padding: 48px 0;
-  margin-top: 48px;
 }
 
 .footer-inner {

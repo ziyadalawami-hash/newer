@@ -149,6 +149,17 @@ function initLanguage() {
 // =========================================================
 // PROJECT CARDS
 // =========================================================
+function closeAllCards() {
+  document.querySelectorAll('.project-card.card-open').forEach(c => {
+    const ov = c.querySelector('.card-overlay');
+    if (ov) {
+      ov.classList.remove('card-overlay-open');
+      ov.classList.add('card-overlay-closed');
+    }
+    c.classList.remove('card-open');
+  });
+}
+
 function initProjectCards() {
   document.querySelectorAll('.project-card').forEach(card => {
     const front = card.querySelector('.card-front');
@@ -156,6 +167,7 @@ function initProjectCards() {
     const closeBtn = card.querySelector('.overlay-close');
 
     function openCard() {
+      closeAllCards();
       overlay.classList.remove('card-overlay-closed');
       overlay.classList.add('card-overlay-open');
       card.classList.add('card-open');
@@ -182,7 +194,6 @@ function initProjectCards() {
       });
     }
 
-    // Prevent overlay link clicks from closing the card
     if (overlay) {
       overlay.querySelectorAll('a').forEach(a => {
         a.addEventListener('click', function(e) {
