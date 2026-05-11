@@ -23,8 +23,7 @@ function applyLanguage(lang) {
 
   const isRTL = lang === 'ar';
   document.documentElement.setAttribute('lang', lang);
-  document.documentElement.dir = 'ltr';
-  document.body.setAttribute('data-dir', isRTL ? 'rtl' : 'ltr');
+  document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
 
   // Update all [data-en] / [data-ar] elements
   document.querySelectorAll('[data-en]').forEach(el => {
