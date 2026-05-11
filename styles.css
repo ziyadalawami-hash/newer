@@ -13,6 +13,7 @@ html {
   font-feature-settings: "liga" 1, "kern" 1;
   overflow-y: scroll;
   scroll-behavior: auto;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -67,10 +68,14 @@ address {
 ::-webkit-scrollbar-thumb { background: #1c6000; border-radius: 6px; border: 2px solid #001a03; }
 ::-webkit-scrollbar-thumb:hover { background: #27a102; }
 
-/* Focus */
-:focus-visible {
+/* Focus - only on specific interactive elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
   outline: 2px solid rgba(31, 234, 0, 0.5);
   outline-offset: 2px;
+  border-radius: 4px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -343,11 +348,15 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 768px) {
   .hero-desc-row {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     gap: 24px;
     max-width: 672px;
     margin: 0 auto 32px;
     align-items: flex-start;
+  }
+
+  [dir="rtl"] .hero-desc-row {
+    flex-direction: row;
   }
 }
 
@@ -373,6 +382,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  justify-content: flex-start;
 }
 
 /* Mobile block */
@@ -483,6 +493,7 @@ h1, h2, h3, h4, h5, h6 {
 .projects-section {
   padding: 48px 0;
   background-color: #001a03;
+  margin-bottom: 0;
 }
 
 .click-hint {
@@ -775,8 +786,9 @@ h1, h2, h3, h4, h5, h6 {
    CONTACT
    ========================================================= */
 .contact-section {
-  padding: 48px 0;
+  padding: 48px 0 24px;
   background-color: #001a03;
+  margin: 0;
 }
 
 .contact-card {
@@ -956,7 +968,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer {
   background-color: #000000;
   padding: 48px 0;
-  margin-top: 48px;
+  margin-top: 0;
 }
 
 .footer-inner {
