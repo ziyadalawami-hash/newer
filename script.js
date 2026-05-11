@@ -338,6 +338,28 @@ function initYear() {
 }
 
 // =========================================================
+// FOCUS-CLICK RING
+// =========================================================
+function initFocusClick() {
+  document.addEventListener('mousedown', function(e) {
+    const el = e.target;
+    if (el.tagName === 'BUTTON' || el.tagName === 'A') {
+      el.classList.add('focus-click');
+    }
+  });
+
+  document.addEventListener('blur', function() {
+    document.querySelectorAll('.focus-click').forEach(el => {
+      el.classList.remove('focus-click');
+    });
+  }, true);
+
+  document.addEventListener('focusout', function(e) {
+    e.target.classList.remove('focus-click');
+  }, true);
+}
+
+// =========================================================
 // INIT
 // =========================================================
 document.addEventListener('DOMContentLoaded', function() {
@@ -351,4 +373,5 @@ document.addEventListener('DOMContentLoaded', function() {
   initContactForm();
   initClipboard();
   initYear();
+  initFocusClick();
 });
