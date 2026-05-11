@@ -1,73 +1,456 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ziyad Ahmed - AI Engineer | Full Stack Developer & Software Engineer</title>
+  <meta name="description" content="Ziyad Ahmed is an AI Engineer and Full Stack Developer specializing in intelligent systems, web development, and machine learning. Explore my portfolio of innovative projects and professional experience." />
+  <meta name="keywords" content="Ziyad Ahmed, AI Engineer, Full Stack Developer, Web Developer, Software Engineer, Machine Learning, React, TypeScript, Portfolio, Artificial Intelligence" />
+  <meta name="author" content="Ziyad Ahmed" />
+  <meta name="theme-color" content="#001a03" />
+  <link rel="canonical" href="https://ziyadahmed.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ziyad Ahmed - AI Engineer | Full Stack Developer" />
+  <meta property="og:description" content="AI Engineer and Full Stack Developer architecting intelligent systems. Explore my portfolio of web development projects and professional background." />
+  <meta property="og:url" content="https://ziyadahmed.com/" />
+  <meta property="og:site_name" content="Ziyad Ahmed Portfolio" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="ar_EG" />
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1jmA4GNeavRwdMKSmq33YSGlNSBVFs5en" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Ziyad Ahmed - AI Engineer" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ziyad Ahmed - AI Engineer | Full Stack Developer" />
+  <meta name="twitter:description" content="AI Engineer and Full Stack Developer architecting intelligent systems. Explore my portfolio and projects." />
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1jmA4GNeavRwdMKSmq33YSGlNSBVFs5en" />
+  <meta name="twitter:image:alt" content="Ziyad Ahmed - AI Engineer" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ziyad Ahmed",
+    "jobTitle": "AI Engineer",
+    "description": "AI Engineer and Full Stack Developer specializing in intelligent systems and web development",
+    "url": "https://ziyadahmed.com",
+    "image": "https://lh3.googleusercontent.com/d/1jmA4GNeavRwdMKSmq33YSGlNSBVFs5en",
+    "email": "ziyad.ahmedalawami@gmail.com",
+    "sameAs": [
+      "https://github.com/ziyadalawami",
+      "https://linkedin.com/in/ziyadalawami"
+    ],
+    "knowsAbout": ["Artificial Intelligence","Machine Learning","Web Development","Full Stack Development","React","TypeScript","Software Engineering"]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+  </script>
+</head>
+<body id="top">
 
-    <title>Ziyad Ahmed - AI Engineer | Full Stack Developer & Software Engineer</title>
-    <meta name="description" content="Ziyad Ahmed is an AI Engineer and Full Stack Developer specializing in intelligent systems, web development, and machine learning. Explore my portfolio of innovative projects and professional experience." />
-    <meta name="keywords" content="Ziyad Ahmed, AI Engineer, Full Stack Developer, Web Developer, Software Engineer, Machine Learning, React, TypeScript, Portfolio, Artificial Intelligence" />
-    <meta name="author" content="Ziyad Ahmed" />
-    <meta name="theme-color" content="#001a03" />
-    <link rel="canonical" href="https://ziyadahmed.com/" />
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <div class="nav-links">
+        <a href="#hero" class="nav-link nav-name" data-scroll="hero">Ziyad</a>
+        <a href="#projects" class="nav-link" data-scroll="projects">Projects</a>
+        <a href="#contact" class="nav-link" data-scroll="contact">Contact</a>
+      </div>
+    </div>
+    <div class="lang-wrapper">
+      <div class="lang-dropdown-group">
+        <button class="lang-btn" aria-label="Change language" aria-haspopup="listbox">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </button>
+        <div class="lang-menu" role="listbox">
+          <button class="lang-option" data-lang="ar" role="option">العربية</button>
+          <button class="lang-option lang-active" data-lang="en" role="option">English</button>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Ziyad Ahmed - AI Engineer | Full Stack Developer" />
-    <meta property="og:description" content="AI Engineer and Full Stack Developer architecting intelligent systems. Explore my portfolio of web development projects and professional background." />
-    <meta property="og:url" content="https://ziyadahmed.com/" />
-    <meta property="og:site_name" content="Ziyad Ahmed Portfolio" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="ar_EG" />
-    <meta property="og:image" content="https://lh3.googleusercontent.com/d/1jmA4GNeavRwdMKSmq33YSGlNSBVFs5en" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Ziyad Ahmed - AI Engineer" />
+  <!-- PAGE WRAPPER -->
+  <div class="page-bg">
+    <main class="main-container">
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Ziyad Ahmed - AI Engineer | Full Stack Developer" />
-    <meta name="twitter:description" content="AI Engineer and Full Stack Developer architecting intelligent systems. Explore my portfolio and projects." />
-    <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1jmA4GNeavRwdMKSmq33YSGlNSBVFs5en" />
-    <meta name="twitter:image:alt" content="Ziyad Ahmed - AI Engineer" />
+      <!-- HERO -->
+      <header class="hero-section" id="hero">
+        <div class="hero-inner">
+          <div class="hero-avatar-wrap">
+            <img
+              src="https://lh3.googleusercontent.com/d/1jmA4GNeavRwdMKSmq33YSGlNSBVFs5en"
+              alt="Ziyad Ahmed"
+              class="hero-avatar"
+              draggable="false"
+              width="128"
+              height="128"
+            />
+          </div>
+          <h1 class="hero-name" data-en="Ziyad Ahmed" data-ar="زياد أحمد">Ziyad Ahmed</h1>
+          <h2 class="hero-title" data-en="AI Engineer" data-ar="مهندس ذكاء اصطناعي">AI Engineer</h2>
 
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow" />
+          <!-- Desktop two-column layout -->
+          <div class="hero-desc-row">
+            <div class="hero-socials-col">
+              <a href="https://github.com/ziyadalawami" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub Profile" title="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+              <a href="https://linkedin.com/in/ziyadalawami/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn Profile" title="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="mailto:ziyad.ahmedalawami@gmail.com" class="social-icon" aria-label="Mail Contact" title="Email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </a>
+            </div>
+            <div class="hero-divider"></div>
+            <p class="hero-desc" data-en="Architecting intelligent systems that turn raw data into decisive action. Let's automate your future." data-ar="ابني أنظمة ذكية تحول البيانات الخام إلى قرارات حاسمة. لنصنع مستقبل أعمالك آلياً.">
+              Architecting intelligent systems that turn raw data into decisive action. Let's automate your future.
+            </p>
+          </div>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Ziyad Ahmed",
-      "jobTitle": "AI Engineer",
-      "description": "AI Engineer and Full Stack Developer specializing in intelligent systems and web development",
-      "url": "https://ziyadahmed.com",
-      "image": "https://lh3.googleusercontent.com/d/1jmA4GNeavRwdMKSmq33YSGlNSBVFs5en",
-      "email": "ziyad.ahmedalawami@gmail.com",
-      "sameAs": [
-        "https://github.com/yourprofile",
-        "https://linkedin.com/in/ziyadalawami"
-      ],
-      "knowsAbout": [
-        "Artificial Intelligence",
-        "Machine Learning",
-        "Web Development",
-        "Full Stack Development",
-        "React",
-        "TypeScript",
-        "Software Engineering"
-      ]
-    }
-    </script>
+          <!-- Mobile layout -->
+          <div class="hero-mobile-block">
+            <p class="hero-desc-mobile" data-en="Architecting intelligent systems that turn raw data into decisive action. Let's automate your future." data-ar="ابني أنظمة ذكية تحول البيانات الخام إلى قرارات حاسمة. لنصنع مستقبل أعمالك آلياً.">
+              Architecting intelligent systems that turn raw data into decisive action. Let's automate your future.
+            </p>
+            <div class="hero-socials-row">
+              <a href="https://github.com/ziyadalawami" target="_blank" rel="noopener noreferrer" class="social-icon social-icon-lg" aria-label="GitHub Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+              <a href="https://linkedin.com/in/ziyadalawami/" target="_blank" rel="noopener noreferrer" class="social-icon social-icon-lg" aria-label="LinkedIn Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="mailto:ziyad.ahmedalawami@gmail.com" class="social-icon social-icon-lg" aria-label="Mail Contact">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </a>
+            </div>
+          </div>
 
-    <script>
-      if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-      }
-      window.scrollTo(0, 0);
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="./src/main.tsx"></script>
-  </body>
+          <div class="hero-cv-wrap">
+            <a href="/assets/ziyad_ahmed_cv.pdf" target="_blank" rel="noopener noreferrer" class="cv-btn" aria-label="View CV">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span data-en="View CV" data-ar="السيرة الذاتية">View CV</span>
+            </a>
+          </div>
+
+          <button class="explore-btn" id="explore-btn" aria-label="Scroll to projects">
+            <span data-en="Explore My Work" data-ar="استكشف أعمالي">Explore My Work</span>
+            <svg class="arrow-bounce" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="projects-section" aria-label="Projects Portfolio">
+        <div class="section-inner">
+          <p class="click-hint" data-en="Click on any project to see more details" data-ar="انقر على أي مشروع لرؤية المزيد من التفاصيل">
+            Click on any project to see more details
+          </p>
+          <div class="projects-grid">
+
+            <!-- Project 1: E-Commerce Platform -->
+            <article class="project-card" data-index="0">
+              <div class="card-front">
+                <div class="card-img-wrap">
+                  <img src="https://lh3.googleusercontent.com/d/1WefwThDMIPiKyZh4lXGrWQ7m-DGvX1Kd" alt="E-Commerce Platform" loading="lazy" decoding="async" draggable="false" />
+                </div>
+                <div class="card-info">
+                  <h2 class="card-title" data-en="E-Commerce Platform" data-ar="منصة التجارة الإلكترونية">E-Commerce Platform</h2>
+                  <p class="card-desc" data-en="A full-featured e-commerce platform with real-time inventory management and ML-based recommendations..." data-ar="منصة تجارة إلكترونية كاملة المزايا مع إدارة مخزون في الوقت الفعلي وتوصيات قائمة على التعلم الآلي...">A full-featured e-commerce platform with real-time inventory management and ML-based recommendations...</p>
+                  <div class="card-tags">
+                    <span class="tag tag-cat">ML</span><span class="tag tag-cat">Front-end</span><span class="tag tag-cat">Back-end</span>
+                    <span class="tag tag-tech">React</span><span class="tag tag-tech">Node.js</span><span class="tag tag-tech">MongoDB</span><span class="tag tag-tech">Redux</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-overlay card-overlay-closed">
+                <button class="overlay-close" aria-label="Close details">&#x2715;</button>
+                <div class="overlay-body">
+                  <div class="overlay-header">
+                    <h2 class="overlay-title" data-en="E-Commerce Platform" data-ar="منصة التجارة الإلكترونية">E-Commerce Platform</h2>
+                    <div class="overlay-tags">
+                      <span class="tag tag-cat">ML</span><span class="tag tag-cat">Front-end</span><span class="tag tag-cat">Back-end</span>
+                      <span class="tag tag-tech">React</span><span class="tag tag-tech">Node.js</span><span class="tag tag-tech">MongoDB</span><span class="tag tag-tech">Redux</span>
+                    </div>
+                  </div>
+                  <div class="overlay-content">
+                    <div class="content-en">
+                      <p>A full-featured e-commerce platform with real-time inventory management and ML-based recommendations.</p>
+                      <p class="content-heading"><strong>Key Features:</strong></p>
+                      <ul><li>Real-time inventory tracking and management</li><li>ML-based product recommendation engine</li><li>Integrated payment gateway with multiple options</li><li>Responsive design for mobile and desktop</li></ul>
+                      <p class="content-heading"><strong>Technical Contributions:</strong></p>
+                      <ul><li>Architected the <strong>microservices architecture</strong> using Node.js</li><li>Implemented ML recommendation system using <strong>collaborative filtering</strong></li><li>Optimized database queries reducing load time by <strong>40%</strong></li></ul>
+                      <p class="content-heading"><strong>Key Impact:</strong></p>
+                      <ul><li>Increased conversion rate by <strong>25%</strong></li><li>Serving <strong>50k+</strong> daily active users</li><li>Achieved <strong>99.9%</strong> uptime with auto-scaling infrastructure</li></ul>
+                    </div>
+                    <div class="content-ar" style="display:none">
+                      <p>منصة تجارة إلكترونية كاملة المزايا مع إدارة مخزون في الوقت الفعلي وتوصيات قائمة على التعلم الآلي.</p>
+                      <p class="content-heading"><strong>الميزات الرئيسية:</strong></p>
+                      <ul><li>تتبع وإدارة المخزون في الوقت الفعلي</li><li>محرك توصيات المنتجات القائم على التعلم الآلي</li><li>بوابة دفع متكاملة مع خيارات متعددة</li><li>تصميم متجاوب للهاتف المحمول وسطح المكتب</li></ul>
+                      <p class="content-heading"><strong>المساهمات التقنية:</strong></p>
+                      <ul><li>تصميم <strong>بنية الخدمات الصغيرة</strong> باستخدام Node.js</li><li>تطبيق نظام التوصيات باستخدام <strong>التصفية التعاونية</strong></li><li>تحسين استعلامات قاعدة البيانات وتقليل وقت التحميل بنسبة <strong>40٪</strong></li></ul>
+                      <p class="content-heading"><strong>التأثير الرئيسي:</strong></p>
+                      <ul><li>زيادة معدل التحويل بنسبة <strong>25٪</strong></li><li>خدمة أكثر من <strong>50 ألف</strong> مستخدم نشط يوميًا</li><li>تحقيق وقت تشغيل بنسبة <strong>99.9٪</strong> مع البنية التحتية ذاتية التوسع</li></ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="overlay-actions">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="action-btn action-repo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+                    Repo
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="action-btn action-demo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Demo
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 2: Task Management App -->
+            <article class="project-card" data-index="1">
+              <div class="card-front">
+                <div class="card-img-wrap">
+                  <img src="https://lh3.googleusercontent.com/d/16yZTxxbMVfHakO623n33QSkkuCR5Q1yf" alt="Task Management App" loading="lazy" decoding="async" draggable="false" />
+                </div>
+                <div class="card-info">
+                  <h2 class="card-title" data-en="Task Management App" data-ar="تطبيق إدارة المهام">Task Management App</h2>
+                  <p class="card-desc" data-en="Collaborative task management tool with real-time updates and team collaboration features..." data-ar="أداة إدارة مهام تعاونية مع تحديثات في الوقت الفعلي وميزات التعاون الجماعي...">Collaborative task management tool with real-time updates and team collaboration features...</p>
+                  <div class="card-tags">
+                    <span class="tag tag-cat">Front-end</span><span class="tag tag-cat">Back-end</span>
+                    <span class="tag tag-tech">TypeScript</span><span class="tag tag-tech">Express</span><span class="tag tag-tech">PostgreSQL</span><span class="tag tag-tech">Socket.io</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-overlay card-overlay-closed">
+                <button class="overlay-close" aria-label="Close details">&#x2715;</button>
+                <div class="overlay-body">
+                  <div class="overlay-header">
+                    <h2 class="overlay-title" data-en="Task Management App" data-ar="تطبيق إدارة المهام">Task Management App</h2>
+                    <div class="overlay-tags">
+                      <span class="tag tag-cat">Front-end</span><span class="tag tag-cat">Back-end</span>
+                      <span class="tag tag-tech">TypeScript</span><span class="tag tag-tech">Express</span><span class="tag tag-tech">PostgreSQL</span><span class="tag tag-tech">Socket.io</span>
+                    </div>
+                  </div>
+                  <div class="overlay-content">
+                    <div class="content-en">
+                      <p>Collaborative task management tool designed for teams with real-time synchronization and advanced collaboration features.</p>
+                      <p class="content-heading"><strong>Core Features:</strong></p>
+                      <ul><li>Real-time task updates using <strong>WebSocket</strong> technology</li><li>Team workspaces with role-based access control</li><li>Kanban boards and list views</li><li>File attachments and commenting system</li></ul>
+                      <p class="content-heading"><strong>Technical Implementation:</strong></p>
+                      <ul><li>Built with <strong>TypeScript</strong> for type-safe development</li><li>Real-time communication using <strong>Socket.io</strong></li><li>PostgreSQL database with optimized indexing</li><li>RESTful API with Express.js</li></ul>
+                      <p class="content-heading"><strong>Results:</strong></p>
+                      <ul><li>Serving <strong>10k+</strong> daily active users</li><li>Achieved <strong>99.9%</strong> uptime</li><li>Reduced task completion time by <strong>30%</strong></li></ul>
+                    </div>
+                    <div class="content-ar" style="display:none">
+                      <p>أداة إدارة مهام تعاونية مصممة للفرق مع مزامنة في الوقت الفعلي وميزات تعاون متقدمة.</p>
+                      <p class="content-heading"><strong>الميزات الأساسية:</strong></p>
+                      <ul><li>تحديثات المهام في الوقت الفعلي باستخدام تقنية <strong>WebSocket</strong></li><li>مساحات عمل جماعية مع التحكم في الوصول القائم على الأدوار</li><li>لوحات كانبان وطرق عرض القوائم</li><li>نظام إرفاق الملفات والتعليقات</li></ul>
+                      <p class="content-heading"><strong>التنفيذ التقني:</strong></p>
+                      <ul><li>بناؤه باستخدام <strong>TypeScript</strong> للتطوير الآمن من حيث الأنواع</li><li>الاتصال في الوقت الفعلي باستخدام <strong>Socket.io</strong></li><li>قاعدة بيانات PostgreSQL مع فهرسة محسّنة</li><li>واجهة برمجة تطبيقات RESTful باستخدام Express.js</li></ul>
+                      <p class="content-heading"><strong>النتائج:</strong></p>
+                      <ul><li>خدمة أكثر من <strong>10 آلاف</strong> مستخدم نشط يوميًا</li><li>تحقيق وقت تشغيل بنسبة <strong>99.9٪</strong></li><li>تقليل وقت إنجاز المهام بنسبة <strong>30٪</strong></li></ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="overlay-actions">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="action-btn action-repo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+                    Repo
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 3: AI Content Generator -->
+            <article class="project-card" data-index="2">
+              <div class="card-front">
+                <div class="card-img-wrap">
+                  <img src="https://lh3.googleusercontent.com/d/1yVQvagTHxjXlE2V7teLrovyC1YtRA5lP" alt="AI Content Generator" loading="lazy" decoding="async" draggable="false" />
+                </div>
+                <div class="card-info">
+                  <h2 class="card-title" data-en="AI Content Generator" data-ar="مولد المحتوى بالذكاء الاصطناعي">AI Content Generator</h2>
+                  <p class="card-desc" data-en="AI-powered content generation tool for marketers using advanced NLP models..." data-ar="أداة توليد محتوى مدعومة بالذكاء الاصطناعي للمسوقين باستخدام نماذج معالجة اللغة الطبيعية المتقدمة...">AI-powered content generation tool for marketers using advanced NLP models...</p>
+                  <div class="card-tags">
+                    <span class="tag tag-cat">ML</span><span class="tag tag-cat">DL</span><span class="tag tag-cat">NLP</span>
+                    <span class="tag tag-tech">Python</span><span class="tag tag-tech">TensorFlow</span><span class="tag tag-tech">React</span><span class="tag tag-tech">FastAPI</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-overlay card-overlay-closed">
+                <button class="overlay-close" aria-label="Close details">&#x2715;</button>
+                <div class="overlay-body">
+                  <div class="overlay-header">
+                    <h2 class="overlay-title" data-en="AI Content Generator" data-ar="مولد المحتوى بالذكاء الاصطناعي">AI Content Generator</h2>
+                    <div class="overlay-tags">
+                      <span class="tag tag-cat">ML</span><span class="tag tag-cat">DL</span><span class="tag tag-cat">NLP</span>
+                      <span class="tag tag-tech">Python</span><span class="tag tag-tech">TensorFlow</span><span class="tag tag-tech">React</span><span class="tag tag-tech">FastAPI</span>
+                    </div>
+                  </div>
+                  <div class="overlay-content">
+                    <div class="content-en">
+                      <p>AI-powered content generation platform that helps marketers create high-quality content using state-of-the-art NLP models.</p>
+                      <p class="content-heading"><strong>Features:</strong></p>
+                      <ul><li>Multiple content types (blogs, social media, product descriptions)</li><li>Tone and style customization</li><li>Multi-language support</li><li>SEO optimization suggestions</li></ul>
+                      <p class="content-heading"><strong>Technical Stack:</strong></p>
+                      <ul><li>Built ML pipeline using <strong>TensorFlow</strong> and <strong>Transformers</strong></li><li>FastAPI backend for high-performance inference</li><li>React frontend with real-time preview</li><li>Integrated with <strong>GPT</strong> and custom fine-tuned models</li></ul>
+                      <p class="content-heading"><strong>Impact:</strong></p>
+                      <ul><li>Generated over <strong>1M+</strong> articles</li><li>Achieved <strong>95%</strong> user satisfaction rating</li><li>Reduced content creation time by <strong>60%</strong></li><li>Processing <strong>100k+</strong> requests daily</li></ul>
+                    </div>
+                    <div class="content-ar" style="display:none">
+                      <p>منصة توليد محتوى مدعومة بالذكاء الاصطناعي تساعد المسوقين على إنشاء محتوى عالي الجودة باستخدام أحدث نماذج معالجة اللغة الطبيعية.</p>
+                      <p class="content-heading"><strong>الميزات:</strong></p>
+                      <ul><li>أنواع محتوى متعددة (مدونات، وسائل التواصل الاجتماعي، أوصاف المنتجات)</li><li>تخصيص النبرة والأسلوب</li><li>دعم متعدد اللغات</li><li>اقتراحات تحسين محركات البحث</li></ul>
+                      <p class="content-heading"><strong>التكنولوجيا المستخدمة:</strong></p>
+                      <ul><li>بناء خط معالجة التعلم الآلي باستخدام <strong>TensorFlow</strong> و<strong>Transformers</strong></li><li>واجهة خلفية FastAPI للاستدلال عالي الأداء</li><li>واجهة أمامية React مع معاينة في الوقت الفعلي</li><li>التكامل مع <strong>GPT</strong> ونماذج مخصصة محسّنة</li></ul>
+                      <p class="content-heading"><strong>التأثير:</strong></p>
+                      <ul><li>توليد أكثر من <strong>مليون</strong> مقال</li><li>تحقيق تقييم رضا المستخدمين بنسبة <strong>95٪</strong></li><li>تقليل وقت إنشاء المحتوى بنسبة <strong>60٪</strong></li><li>معالجة أكثر من <strong>100 ألف</strong> طلب يوميًا</li></ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="overlay-actions">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="action-btn action-demo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Demo
+                  </a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+        <div class="section-inner">
+          <div class="contact-card">
+            <h2 id="contact-heading" class="contact-title" data-en="Get In Touch" data-ar="تواصل معي">Get In Touch</h2>
+            <p class="contact-subtitle" data-en="Have a question or want to work together? Feel free to reach out!" data-ar="هل لديك سؤال أو تريد العمل معًا؟ لا تتردد في التواصل!">
+              Have a question or want to work together? Feel free to reach out!
+            </p>
+            <form id="contact-form" aria-label="Contact form" novalidate>
+              <input type="hidden" name="_captcha" value="false" />
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="inp-name" class="sr-only">Your Name</label>
+                  <div class="input-wrap">
+                    <input type="text" id="inp-name" name="name" required class="form-input"
+                      placeholder="Your Name"
+                      data-placeholder-en="Your Name"
+                      data-placeholder-ar="اسمك" />
+                    <button type="button" class="clear-btn" data-target="inp-name" aria-label="Clear name field" style="display:none">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inp-email" class="sr-only">Your Email</label>
+                  <div class="input-wrap">
+                    <input type="email" id="inp-email" name="email" required class="form-input"
+                      placeholder="Your Email"
+                      data-placeholder-en="Your Email"
+                      data-placeholder-ar="بريدك الإلكتروني" />
+                    <button type="button" class="clear-btn" data-target="inp-email" aria-label="Clear email field" style="display:none">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inp-message" class="sr-only">Your Message</label>
+                <div class="input-wrap">
+                  <textarea id="inp-message" name="message" required rows="4" class="form-input form-textarea"
+                    placeholder="Your Message"
+                    data-placeholder-en="Your Message"
+                    data-placeholder-ar="رسالتك"></textarea>
+                  <button type="button" class="clear-btn clear-btn-top" data-target="inp-message" aria-label="Clear message field" style="display:none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div id="form-status" role="status" aria-live="polite"></div>
+              <div class="form-submit-row">
+                <button type="submit" class="submit-btn" id="submit-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                  <span data-en="Send Message" data-ar="إرسال الرسالة">Send Message</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <section class="footer-col" aria-labelledby="footer-contact-heading">
+          <h2 id="footer-contact-heading" class="footer-heading" data-en="Contact" data-ar="التواصل">Contact</h2>
+          <address class="footer-address">
+            <button class="copy-btn" data-copy="ziyad.ahmedalawami@gmail.com" aria-label="Copy email address to clipboard">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span dir="ltr">ziyad.ahmedalawami@gmail.com</span>
+              <span class="copy-tooltip" aria-hidden="true">Copied!</span>
+            </button>
+            <button class="copy-btn" data-copy="+201015754619" aria-label="Copy phone number to clipboard">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span dir="ltr">+20 1015754619</span>
+              <span class="copy-tooltip" aria-hidden="true">Copied!</span>
+            </button>
+          </address>
+        </section>
+
+        <nav class="footer-col" aria-labelledby="footer-links-heading">
+          <h2 id="footer-links-heading" class="footer-heading" data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h2>
+          <ul class="footer-links-list">
+            <li><a href="#top" class="footer-link" id="back-to-top" data-en="Back to Top" data-ar="العودة للأعلى">Back to Top</a></li>
+          </ul>
+        </nav>
+
+        <section class="footer-col" aria-labelledby="footer-social-heading">
+          <h2 id="footer-social-heading" class="footer-heading" data-en="Connect" data-ar="تواصل معي">Connect</h2>
+          <nav aria-label="Social media links">
+            <ul class="footer-social-list">
+              <li>
+                <a href="https://github.com/ziyadalawami" class="footer-social-icon" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/ziyadalawami/" class="footer-social-icon" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:ziyad.ahmedalawami@gmail.com" class="footer-social-icon" aria-label="Email" title="Email">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </section>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; <span id="year"></span> Ziyad Ahmed. <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة.">All rights reserved.</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
