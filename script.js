@@ -341,21 +341,35 @@ function initYear() {
 // FOCUS-CLICK RING
 // =========================================================
 function initFocusClick() {
+  let lastInteractionWasClick = false;
+
   document.addEventListener('mousedown', function(e) {
-    const el = e.target;
-    if (el.tagName === 'BUTTON' || el.tagName === 'A') {
+    const el = e.target.closest('button, a');
+    if (el) {
+      document.querySelectorAll('.focus-click').forEach(item => {
+        item.classList.remove('focus-click');
+      });
       el.classList.add('focus-click');
+      lastInteractionWasClick = true;
     }
   });
 
-  document.addEventListener('blur', function() {
-    document.querySelectorAll('.focus-click').forEach(el => {
-      el.classList.remove('focus-click');
-    });
-  }, true);
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Tab') {
+      lastInteractionWasClick = false;
+      document.querySelectorAll('.focus-click').forEach(el => {
+        el.classList.remove('focus-click');
+      });
+    }
+  });
 
   document.addEventListener('focusout', function(e) {
-    e.target.classList.remove('focus-click');
+    const el = e.target.closest('button, a');
+    if (el && lastInteractionWasClick) {
+      setTimeout(() => {
+        el.classList.remove('focus-click');
+      }, 0);
+    }
   }, true);
 }
 
