@@ -20,8 +20,9 @@ const Header = ({ data, isRTL }: HeaderProps) => {
     e.preventDefault();
     const element = document.getElementById('projects');
     if (element) {
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      smoothScrollTo(elementPosition, 800);
+      const navHeight = 40;
+      const offsetPosition = element.getBoundingClientRect().top + window.pageYOffset - navHeight;
+      smoothScrollTo(offsetPosition, 800);
     }
   };
 
