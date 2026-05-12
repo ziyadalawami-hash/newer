@@ -3,7 +3,6 @@ import { GitBranch, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { usePortfolioData } from '../hooks/usePortfolioData';
 import Hero from './Hero';
-import About from './About';
 import Footer from './Footer';
 import Contact from './Contact';
 
@@ -95,7 +94,6 @@ const MainContent = () => {
       <div id="hero">
         <Hero data={{...heroData, ...translations}} isRTL={isRTL} />
       </div>
-      <About translations={translations} isRTL={isRTL} />
       <section id="projects" className="py-12 bg-[#001a03]" style={{ direction: isRTL ? 'rtl' : 'ltr' }} aria-label="Projects Portfolio">
         <div className="max-w-[1000px] mx-auto px-6">
           <div className="space-y-12">
