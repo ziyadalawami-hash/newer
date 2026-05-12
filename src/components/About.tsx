@@ -51,10 +51,10 @@ const experienceData: ExperienceCard[] = [
   },
 ];
 
-const typeBadgeClass = (type: string) => {
-  if (type === 'Remote') return 'border border-[#1fea00] text-[#1fea00]';
-  if (type === 'Hybrid') return 'border border-[#27a102] text-[#27a102]';
-  return 'bg-[#1fea00] text-black';
+const typeBadgeColor = (type: string) => {
+  if (type === 'Remote') return 'bg-[#1fea00]';
+  if (type === 'Hybrid') return 'bg-[#27a102]';
+  return 'bg-[#1fea00]';
 };
 
 const About = ({ isRTL }: AboutProps) => {
@@ -134,7 +134,7 @@ const About = ({ isRTL }: AboutProps) => {
                       {item.location}
                     </span>
                     <span
-                      className={`px-2 py-0.5 rounded text-xs font-semibold ${typeBadgeClass(item.type)}`}
+                      className={`px-2 py-0.5 rounded text-xs font-semibold text-black ${typeBadgeColor(item.type)}`}
                     >
                       {item.type}
                     </span>
